@@ -1,0 +1,26 @@
+name: Build and Run
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with: 
+          node-version: '14'
+
+      - name: Install Dependncies
+        run:  sudo npm install
+      
+      - name: tshirts fail
+        run: bash .github/workflows/expectfail.sh node tshirts.js
+
+      - name: misaligned fail
+        run: bash .github/workflows/expectfail.sh node misaligned.js
+
+      - name: alerter fail
+        run: bash .github/workflows/expectfail.sh node alerter.js
