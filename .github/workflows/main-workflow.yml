@@ -6,21 +6,23 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with: 
-          node-version: '14'
+          node-version: '20'
 
-      - name: Install Dependncies
-        run:  sudo npm install
+      - name: Install Dependencies
+        run:  npm install
       
       - name: tshirts fail
-        run: bash .github/workflows/expectfail.sh "node tshirts.js"
+        if: always()
+        run: node tshirts.mjs
 
       - name: misaligned fail
-        run: bash .github/workflows/expectfail.sh "node misaligned.js"
+        if: always()
+        run: node misaligned.mjs
 
-      - name: alerter fail
-        run: bash .github/workflows/expectfail.sh "node alerter.js"
+      - name: weather fail
+        if: always()
+        run: node weatherreport.mjs

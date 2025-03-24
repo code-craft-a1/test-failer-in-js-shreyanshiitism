@@ -2,7 +2,6 @@
   "name": "output-dependency",
   "version": "1.0.0",
   "description": "Decomposition = Making smaller pieces of code - makes testing easier. Just as smaller sentences help us convey our intentions better.",
-  "main": "alerter.js",
   "scripts": {
     "start": "echo \"Run the individual js files\" && exit 1"
   },
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/clean-s-1/output-dependency-js#readme",
   "devDependencies": {
-    "chai": "^4.3.6"
+    "chai": "^5.2.0",
+    "eslint": "^9.23.0"
   }
 }
