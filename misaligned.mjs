@@ -1,6 +1,4 @@
-import { expect } from 'chai';
-
-function print_color_map() {
+export function print_color_map() {
     const majorColors = ["White", "Red", "Black", "Yellow", "Violet"];
     const minorColors = ["Blue", "Orange", "Green", "Brown", "Slate"];
     for (let i = 0; i < majorColors.length; i++) {
@@ -10,7 +8,3 @@ function print_color_map() {
     }
     return majorColors.length * minorColors.length;
 }
-
-const result = print_color_map();
-expect(result).equals(25);
-console.log('All is well (maybe!)');
